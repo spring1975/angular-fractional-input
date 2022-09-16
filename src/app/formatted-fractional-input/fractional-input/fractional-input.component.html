@@ -1,0 +1,11 @@
+<input
+    matInput
+    placeholder="{{ placeholder }}"
+    [formControl]="formControl"
+    class="mat-input-element"
+    [readonly]="readonly"
+    [required]="required"
+    autocomplete="off"
+    (keypress)="keyPress($event)"
+    (ctrl-option-click)="toggleAsDecimal()"
+/>

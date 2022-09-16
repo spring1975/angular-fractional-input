@@ -1,0 +1,15 @@
+    <mat-form-field fxFlex>
+        <mat-label *ngIf="!noLabel">{{ label == null ?  placeholder : label }}</mat-label>
+        <fractional-input
+            [placeholder]="placeholder"
+            [readonly]="readonly"
+            [required]="required"
+            matInput
+            [formControl]="formControl"
+        ></fractional-input>
+        <ng-container matSuffix class="units" [ngSwitch]="unitOfMeasure">
+            <span *ngSwitchCase="'inches'">&quot;</span>
+            <span *ngSwitchCase="'feet'">&rsquo;</span>
+            <span *ngSwitchDefault></span>
+        </ng-container>
+    </mat-form-field>

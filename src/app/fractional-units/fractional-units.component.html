@@ -1,0 +1,20 @@
+<span
+    [matTooltip]="value | number: '.1-4'"
+    matTooltipClass="font-10"
+    matTooltipPosition="above"
+    style="white-space: nowrap"
+>
+    <ng-container *ngIf="showAsDecimal; else fraction">
+        {{ value | number: '.1-4' }}
+    </ng-container>
+    <ng-template #fraction>
+        {{ result?.isNegative ? '-' : ''}}
+        <ng-container *ngIf="result?.wholeUnits !== 0">
+            {{ result?.wholeUnits }}
+        </ng-container>
+        <ng-container *ngIf="result?.hasFraction()">
+            <sup>{{ result.remainder }}</sup
+            >&frasl;<sub>{{ result.denominator }}&nbsp;</sub>
+        </ng-container>
+    </ng-template>
+</span>

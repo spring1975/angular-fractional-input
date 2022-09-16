@@ -1,0 +1,24 @@
+
+formatted-fractional-input {
+    .mat-input-element {
+        border: none;
+        background: none;
+        padding: 0;
+        outline: none;
+        text-align: right;
+        font: inherit;
+    }
+    .units {
+        right: -0.3rem;
+        position: relative;
+        font-size: 1.5rem;
+    }
+    mat-form-field {
+        width: 100%;
+    }
+    .mat-form-field-appearance-outline {
+        .mat-form-field-suffix {
+            top: 0;
+        }
+    }
+}
